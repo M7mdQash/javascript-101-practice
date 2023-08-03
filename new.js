@@ -65,13 +65,46 @@ console.log(typeof tempArray);
 //==================== i/o =========================
 console.log("=============== i/o ===============")
 
-const readline = require('readline').createInterface({// we will need this weird function to call 
-    input: process.stdin,
-    output: process.stdout
-  });
+// we will need this weird function to call
+// const readline = require('readline').createInterface({ 
+//     input: process.stdin,
+//     output: process.stdout
+//   });
   //then we use previous function to 
-  readline.question('Who are you?', name => {
-    console.log(`Hey there ${name}!`);
-    readline.close();
-  });
+  // readline.question('Who are you?', name => {
+  //   console.log(`Hey there ${name}!`);
+  //   readline.close();
+  // });
   
+
+
+  console.log('==================== if statments ====================')
+  //==================== if statements ====================
+
+  let machineVending = ['water', 'soda', 'juice', 'candy'];
+  let vendingChoice = 8;
+  switch(vendingChoice){
+    case 0:
+      console.log(machineVending[0],' 1 riyaal');
+      break;
+    case 1:
+      console.log( machineVending[1], ' 4 riyal');
+      break;
+    case 2:
+      console.log(machineVending[2],' 2 riyaal');
+      break;
+    case 3:
+      console.log(machineVending[3],' 5 riyaals');
+      break;
+    default:
+      console.log('please choose an item to dispense')
+    
+  }
+  let b = 1
+if(!true){
+  b += 1
+} else { 
+  b = 0
+}
+console.log(b)
+
