@@ -39,7 +39,7 @@ function bookNameQuery(num){
 function bookQuantityQuery(num){
   if (num >= 0 && num <= 4){
     return bookLibrary[num][4];
-  }else console.log("please input valid digits lil nigga")
+  }else console.log("please input valid digits ")
 }
 
 function FullQuery(num){
@@ -47,7 +47,7 @@ function FullQuery(num){
     console.log("this will now run an inqury for your book:-"+"\n inquire name: "+nameQuery(num)+"\n name of the book: "
     + bookNameQuery(num)+"\n price of the book: "+ inquirePrice(num)
     +"\n quantity query: "+ bookQuantityQuery(num));
-      }else console.log("please input valid digits lil nigga")
+      }else console.log("please input valid digits ")
 }
 let num = 1;
 
