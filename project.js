@@ -6,11 +6,11 @@
 
 
   const bookLibrary = [// 0: id, 1: book name, 2: book author, 3: book price, 4:quantity in storage
-  [12,'start with why','simon clark',80,13]
-  ,[15,'but how do it know','j. clark scott',59.0,22]
-  ,[123,'Clean code','robert cecil martin',50.0,5]
-  ,[4,'zero to one','Peter griffin',45.0,12]
-  ,[54,'you dont know JS','kyle Simpson',39.9,9]];
+  [12001,'start with why','simon clark',80,13]
+  ,[12005,'but how do it know','j. clark scott',59.0,22]
+  ,[12013,'Clean code','robert cecil martin',50.0,5]
+  ,[12040,'zero to one','Peter griffin',45.0,12]
+  ,[12053,'you dont know JS','kyle Simpson',39.9,9]];
 
 function inquirePrice(number){
 if (number >= 0 && number <= 4)
@@ -57,4 +57,26 @@ let num = 1;
 // + bookNameQuery(2)+"\n price of the book: "+ inquirePrice(2)
 // +"\n quantity query: "+ bookQuantityQuery(2));
 //testing all other queries
-FullQuery(num);
+buyBook(num, orderQuantitiy, credit);
+//==========second part of the project now===========
+
+var orderQuantitiy=3;
+var credit = 100;
+var requestedBook =12040;
+
+function checkOrder(orderQuantitiy,num){
+  if(bookQuantityQuery(num) < orderQuantitiy){
+    return false;
+  }else return true;
+}
+
+function buyBook(num,quant,money){
+  if (checkOrder(quant,num) == true){//checking if the storage of books satisfies
+    if ((inquirePrice(num) * quant) <= money){//checking if enough money 
+      money=(inquirePrice(num) * quant)- money;
+      bookLibrary[num][4] = bookLibrary[num][4] - quant;
+      return money;
+    }else return "insufficeint credit";
+  }else return "book quantity insuffcient ";
+}//this function wont work, but why?
+
