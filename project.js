@@ -49,7 +49,7 @@ function FullQuery(num){
     +"\n quantity query: "+ bookQuantityQuery(num));
       }else console.log("please input valid digits ")
 }
-let num = 1;
+
 
 //must use two brackets to aqquire a specific element
 //in order to return specific array elements from a function we must use the return function and not the print func
@@ -57,11 +57,8 @@ let num = 1;
 // + bookNameQuery(2)+"\n price of the book: "+ inquirePrice(2)
 // +"\n quantity query: "+ bookQuantityQuery(2));
 //testing all other queries
-buyBook(num, orderQuantitiy, credit);
 //==========second part of the project now===========
 
-var orderQuantitiy=3;
-var credit = 100;
 var requestedBook =12040;
 
 function checkOrder(orderQuantitiy,num){
@@ -73,10 +70,16 @@ function checkOrder(orderQuantitiy,num){
 function buyBook(num,quant,money){
   if (checkOrder(quant,num) == true){//checking if the storage of books satisfies
     if ((inquirePrice(num) * quant) <= money){//checking if enough money 
-      money=(inquirePrice(num) * quant)- money;
+      money= money-(inquirePrice(num) * quant);
       bookLibrary[num][4] = bookLibrary[num][4] - quant;
-      return money;
-    }else return "insufficeint credit";
-  }else return "book quantity insuffcient ";
-}//this function wont work, but why?
-
+      return "your receipt is: "+ inquirePrice(num)+ "\n your new balance is: "+ money + "\n the ordered book is: "
+       + bookNameQuery(num);
+    }else return "insufficeint credit, cannot make order";
+  }else return "book quantity insuffcient, cannot make order ";
+  
+}//needs console.log to print 
+let num = 4;
+const orderQuantitiy=5;
+var credit = 1000;
+FullQuery(num)
+console.log(buyBook(num,orderQuantitiy,credit));
